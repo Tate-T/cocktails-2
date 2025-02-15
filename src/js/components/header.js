@@ -21,6 +21,9 @@ themeBtn.addEventListener("click", () => {
 });
 
 menuBtn.addEventListener('click',() => {
-    menuList.classList.remove('hidden-menu-list')
-
+    if (menuList.classList.value.includes('hidden-menu-list')) {
+        menuList.classList.remove('hidden-menu-list')
+    } else if (menuList.classList.value.includes('hidden-menu-list') === false) {
+        menuList.classList.add('hidden-menu-list')
+    }
 })
