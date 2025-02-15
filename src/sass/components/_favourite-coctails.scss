@@ -1,6 +1,7 @@
 .favorite-coctails {
+  height: 100vh;
   &__title {
-    color: #000;
+    color: var(--Black);
     text-align: center;
     font-family: Poppins;
     font-size: 48px;
