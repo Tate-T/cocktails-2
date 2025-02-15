@@ -11,5 +11,10 @@ export const CocktailAPI = {
         `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
       );
       return response.json();
-    }
+    },
+
+		async fetchCocktailsByName (name) { 
+			const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
+			return response.json();
+		}
   };

@@ -43,5 +43,40 @@
     font-size: 24px;
     font-weight: 700;
     background-color: transparent;
+
+    transition-property: color;
+    transition-duration: 500ms;
   }
+
+  &__button:hover {
+    color: #fd5103;
+  }
+}
+
+.error-message {
+  color: var(--black, #202025);
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 72px;
+
+  max-width: 493px;
+}
+
+.error-image {
+  max-width: 345px;
+  max-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-item { 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 70px;
 }
