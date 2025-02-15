@@ -3,7 +3,7 @@
   padding-bottom: 60px;
 
   &__title {
-    color: var(--Black);
+    color: var(--black);
     text-align: center;
     font-family: "Poppins";
     font-size: 48px;
@@ -41,7 +41,7 @@
     max-height: 650px;
 
     border-radius: 4px;
-    border: 1px solid var(--Grapefruit, #fd5103);
+    border: 1px solid var(--grapefruit, #fd5103);
 
     @media screen and (max-width: 770px) {
       max-width: 335px;
@@ -65,7 +65,7 @@
   }
 
   &__name {
-    color: var(--Black, #202025);
+    color: var(--black, #202025);
     text-align: center;
     font-family: "Roboto";
     font-size: 32px;
@@ -122,7 +122,7 @@
     flex-shrink: 0;
 
     border-radius: 4px;
-    background: var(--Auxiliary-orange, #fe7031);
+    background: var(--auxiliary-orange, #fe7031);
 
     padding: 12px 38px;
 
@@ -150,7 +150,7 @@
   }
 
   &__favorite {
-    color: var(--Grapefruit, #fd5103);
+    color: var(--grapefruit, #fd5103);
     font-family: "Roboto";
     font-size: 20px;
     font-style: normal;
@@ -168,7 +168,7 @@
 
     background: var(--white);
     border-radius: 4px;
-    border: 1px solid var(--Grapefruit, #fd5103);
+    border: 1px solid var(--grapefruit, #fd5103);
 
     @media screen and (max-width: 770px) {
       padding: 12px;
@@ -232,6 +232,16 @@
     display: flex;
   }
 
+  &__name {
+    color: var(--black, #000917);
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-bottom: 28px;
+  }
+
   &__ingredients-box {
     display: flex;
     flex-direction: column;
@@ -260,7 +270,7 @@
   }
 
   &__subtext {
-    color: var(--Black, #202025);
+    color: var(--black, #202025);
     font-family: "Poppins";
     font-size: 14px;
     font-style: normal;
@@ -270,7 +280,7 @@
   }
 
   &__ingredients {
-    color: var(--Grey, #5f6775);
+    color: var(--black);
     font-family: "Poppins";
     font-size: 16px;
     font-style: normal;
@@ -301,7 +311,7 @@
   }
 
   &__instractions-text {
-    color: var(--Grey, #5f6775);
+    color: var(--black);
     font-family: "Poppins";
     font-size: 16px;
     font-style: normal;
@@ -309,11 +319,10 @@
     line-height: 28px;
     padding-left: 28px;
     max-width: 615px;
-
   }
 
   &__favorite-button {
-    color: var(--white);
+    color: white;
     font-family: "Roboto";
     font-size: 20px;
     font-style: normal;
@@ -324,7 +333,7 @@
     padding: 12px 24px;
 
     border-radius: 4px;
-    background: var(--Grapefruit, #fd5103);
+    background: var(--grapefruit, #fd5103);
 
     display: flex;
     position: absolute;
@@ -338,20 +347,19 @@
   }
 
   &__close {
-		width: 100%;
-		height: 100%;
+    width: 100%;
+    height: 100%;
     max-width: 32px;
     max-height: 32px;
-
-		background-color: var(--white);
-		position: absolute;
-		top: 20px;
-		right: 30px;
+    background-color: var(--white);
+    position: absolute;
+    top: 20px;
+    right: 30px;
   }
 
   &__close-icon {
     width: 32px;
     height: 32px;
+    fill: var(--black);
   }
 }
-
