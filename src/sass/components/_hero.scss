@@ -2,6 +2,10 @@
   padding-top: 59px;
   padding-bottom: 105px;
 
+  &__container {
+    display: flex;
+  }
+
   &__title {
     color: var(--grapefruit);
     font-family: Poppins;

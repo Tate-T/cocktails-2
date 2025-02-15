@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+import './js/components/header'
+=======
+>>>>>>> Stashed changes
 import { CocktailAPI } from './js/API/api.js';
 import { CocktailComponents } from './/js/components/renderCoctails.js';
 
@@ -15,4 +21,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       </li>
     `;
   }
+<<<<<<< Updated upstream
 });
+=======
+});
+>>>>>>> 6695daee9d6754ce71791bc059e1ece3658e3b22
+>>>>>>> Stashed changes
