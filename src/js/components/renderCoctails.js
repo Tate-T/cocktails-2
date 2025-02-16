@@ -54,16 +54,18 @@ export const CocktailComponents = {
                   `
                     )
                     .join("")}
+										            <button type="button" class="cocktails-modal__favorite-button">
+              Add to favorite
+            </button>
                 </ul>
               </div>
             </div>
+						<div>
             <p class="cocktails-modal__instractions">INSTRUCTIONS:</p>
             <p class="cocktails-modal__instractions-text">
               ${cocktail.strInstructions}
             </p>
-            <button type="button" class="cocktails-modal__favorite-button">
-              Add to favorite
-            </button>
+						</div>
             <button type="button" class="cocktails-modal__close">
               <svg class="cocktails-modal__close-icon">
                 <use href="./images/symbol-defs.svg#icon-cross-close"></use>
