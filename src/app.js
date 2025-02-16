@@ -11,7 +11,7 @@ async function searchHeader() {
   search.addEventListener("click", async (e) => {
     try {
       const data = await CocktailAPI.fetchCocktailsByName(searchInput.value);
-      CocktailComponents.renderCocktailsList(cocktailsList, data.drinks);
+      CocktailComponents.renderCocktailsList(cocktailsList, data);
     } catch (error) {
       handleError(cocktailsList);
     }
