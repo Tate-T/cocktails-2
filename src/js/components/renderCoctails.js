@@ -35,27 +35,46 @@ export const CocktailComponents = {
     const isFavorite = Favorites.isFavorite(cocktail.idDrink);
 
     return `
-      <div class="cocktails-modal__backdrop">
-        <div class="cocktails-modal">
-          <div class="cocktails-modal__box">
-            <img src="${cocktail.strDrinkThumb}" 
-                 alt="${cocktail.strDrink}" 
-                 class="cocktails-modal__img">
-            <div class="cocktails-modal__ingredients-box">
-              <h3 class="cocktails-modal__name">${cocktail.strDrink}</h3>
-              <p class="cocktails-modal__text">INGREDIENTS</p>
-              <p class="cocktails-modal__subtext">Per cocktail</p>
-              <ul class="cocktails-modal__list">
-                ${ingredients.map(item => `
-                  <li class="cocktails-modal__item">
-                    <p class="cocktails-modal__ingredients">
-                      <span class="cocktails-modal__ingredients-span">✶</span>
-                      ${item.measure} ${item.ingredient}
-                    </p>
-                  </li>
-                `).join('')}
-              </ul>
+        <div class="cocktails-modal__backdrop">
+          <div class="cocktails-modal">
+            <div class="cocktails-modal__box">
+              <img src="${cocktail.strDrinkThumb}" 
+                   alt="${cocktail.strDrink}" 
+                   class="cocktails-modal__img" />
+              <div class="cocktails-modal__ingredients-box">
+                <h3 class="cocktails-modal__name">${cocktail.strDrink}</h3>
+                <p class="cocktails-modal__text">INGREDIENTS</p>
+                <p class="cocktails-modal__subtext">Per cocktail</p>
+                <ul class="cocktails-modal__list">
+                  ${ingredients
+                    .map(
+                      (item) => `
+                    <li class="cocktails-modal__item">
+                      <p class="cocktails-modal__ingredients">
+                        <span class="cocktails-modal__ingredients-span">✶</span>
+                        ${item.measure} ${item.ingredient}
+                      </p>
+                    </li>
+                  `
+                    )
+                    .join("")}
+										            <button type="button" class="cocktails-modal__favorite-button">
+              Add to favorite
+            </button>
+                </ul>
+              </div>
             </div>
+						<div>
+            <p class="cocktails-modal__instractions">INSTRUCTIONS:</p>
+            <p class="cocktails-modal__instractions-text">
+              ${cocktail.strInstructions}
+            </p>
+						</div>
+            <button type="button" class="cocktails-modal__close">
+              <svg class="cocktails-modal__close-icon">
+                <use href="./images/symbol-defs.svg#icon-cross-close"></use>
+              </svg>
+            </button>
           </div>
           <p class="cocktails-modal__instractions">INSTRUCTIONS:</p>
           <p class="cocktails-modal__instractions-text">
