@@ -4,6 +4,23 @@ import { Favorites } from "./utils/favorites.js";
 
 document.addEventListener("DOMContentLoaded", initApp);
 
+async function searchHeader() {
+  const search = document.querySelector(".header__btn");
+  const searchInput = document.querySelector(".header__input");
+  const cocktailsList = document.querySelector(".cocktails__list");
+
+  search.addEventListener("click", async (e) => {
+    try {
+      const data = await CocktailAPI.fetchCocktailsByName(searchInput.value);
+      CocktailComponents.renderCocktailsList(cocktailsList, data);
+    } catch (error) {
+      handleError(cocktailsList);
+    }
+  });
+}
+
+searchHeader();
+
 async function initApp() {
   const cocktailsList = document.querySelector(".cocktails__list");
 
@@ -20,8 +37,9 @@ async function initApp() {
 function handleError(container, error) {
   console.error("Error:", error);
   container.innerHTML = `
-    <li class="error-message">
-      Failed to load cocktails. Please try again later.
+    <li class="error-item">
+      <p class="error-message">Sorry, we didn't find any cocktail for you</p>
+		<img class="error-image" src="./images/failed.png" alt="failed to load cocktails">
     </li>
   `;
 }

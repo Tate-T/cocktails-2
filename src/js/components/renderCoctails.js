@@ -65,17 +65,6 @@ export const CocktailComponents = {
               </div>
             </div>
 						<div>
-            <p class="cocktails-modal__instractions">INSTRUCTIONS:</p>
-            <p class="cocktails-modal__instractions-text">
-              ${cocktail.strInstructions}
-            </p>
-						</div>
-            <button type="button" class="cocktails-modal__close">
-              <svg class="cocktails-modal__close-icon">
-                <use href="./images/symbol-defs.svg#icon-cross-close"></use>
-              </svg>
-            </button>
-          </div>
           <p class="cocktails-modal__instractions">INSTRUCTIONS:</p>
           <p class="cocktails-modal__instractions-text">
             ${cocktail.strInstructions}
@@ -90,6 +79,7 @@ export const CocktailComponents = {
               <use href="./images/symbol-defs.svg#icon-cross-close"></use>
             </svg>
           </button>
+          </div>
         </div>
       </div>
     `;
