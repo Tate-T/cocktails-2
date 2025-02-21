@@ -1,7 +1,7 @@
 .favorite-ingredients {
   height: 100vh;
     &__title {
-      color: var(--Black);
+      color: var(--black);
       text-align: center;
       font-family: Poppins;
       font-size: 48px;
@@ -13,7 +13,7 @@
     }
   
     &__pretitle {
-      color: var(--Black, #202025);
+      color: var(--black, #202025);
       text-align: center;
       font-family: Poppins;
       font-size: 32px;
