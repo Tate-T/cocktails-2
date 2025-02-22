@@ -1,0 +1,7 @@
+import{C as a,a as r}from"./assets/hero-ffd518d8.js";import"./assets/favorites-app-f56a7828.js";document.addEventListener("DOMContentLoaded",d);async function l(){const t=document.querySelector(".header__btn"),e=document.querySelector(".header__input"),o=document.querySelector(".cocktails__list");t.addEventListener("click",async n=>{try{const c=await a.fetchCocktailsByName(e.value);r.renderCocktailsList(o,c)}catch{s(o)}})}l();async function d(){const t=document.querySelector(".cocktails__list");try{const e=await a.fetchNonAlcoholicCocktails();r.renderCocktailsList(t,e.drinks)}catch{s(t)}t.addEventListener("click",k)}function s(t){console.error("Error:"),t.innerHTML=`
+    <li class="error-item">
+      <p class="error-message">Sorry, we didn't find any cocktail for you</p>
+		<img class="error-image" src="./images/failed.png" alt="failed to load cocktails">
+    </li>
+  `}async function k(t){const e=t.target.closest(".cocktails__learn-more");if(!e)return;const n=e.closest(".cocktails__item").dataset.id;try{const c=await a.fetchCocktailById(n),i=r.renderModal(c.drinks[0]);document.body.insertAdjacentHTML("beforeend",i),m()}catch(c){console.error("Failed to fetch cocktail details:",c)}}function m(){const t=document.querySelector(".cocktails-modal__backdrop");t.classList.add("is-visible"),t.querySelector(".cocktails-modal__close").addEventListener("click",()=>{t.remove()}),t.addEventListener("click",o=>{o.target===t&&t.remove()})}
+//# sourceMappingURL=commonHelpers.js.map
