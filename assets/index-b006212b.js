@@ -7,4 +7,3 @@ import{C as n,a as l,F as i}from"./hero-fa80a534.js";document.addEventListener("
     [data-id="${e}"] .js-favorite,
     .cocktails-modal__favorite-button[data-id="${e}"]
   `).forEach(r=>{r!==t&&(r.classList.toggle("is-active",o),d(r,o))})}function d(e,t){const c=e.querySelector(".cocktails__favorite-title")||e,o=e.classList.contains("cocktails-modal__favorite-button");c.textContent=t?o?"Remove fav":"Remove":o?"Add to favorite":"Add to"}
-//# sourceMappingURL=index-b006212b.js.map
