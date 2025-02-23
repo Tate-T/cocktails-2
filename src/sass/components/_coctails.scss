@@ -39,9 +39,9 @@
     height: 100%;
     max-width: 395px;
     max-height: 650px;
-
     border-radius: 4px;
     border: 1px solid var(--grapefruit, #fd5103);
+    transition: 500ms;
 
     @media screen and (max-width: 770px) {
       max-width: 335px;
@@ -51,6 +51,13 @@
     @media screen and (max-width: 360px) {
       max-width: 280px;
       max-height: 449px;
+    }
+    &:hover {
+      transition: 500ms;
+      -webkit-box-shadow: 7px 7px 29px -8px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 7px 7px 29px -8px rgba(0, 0, 0, 0.75);
+      box-shadow: 7px 7px 29px -8px rgba(0, 0, 0, 0.75);
+      border: 2px solid var(--grapefruit, #fd5103);
     }
   }
 
@@ -170,6 +177,14 @@
     border-radius: 4px;
     border: 1px solid var(--grapefruit, #fd5103);
 
+    transition-property: box-shadow, transform;
+    transition-duration: 400ms;
+
+    &:hover {
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
     @media screen and (max-width: 770px) {
       padding: 12px;
       max-width: 123px;
@@ -212,10 +227,10 @@
 
   border-radius: 4px;
 
-	@media screen and (max-width: 450px) {
-		max-height: 100%;
-		flex-direction: column-reverse;
-	}
+  @media screen and (max-width: 450px) {
+    max-height: 100%;
+    flex-direction: column-reverse;
+  }
 
   &__backdrop {
     position: fixed;
@@ -241,9 +256,9 @@
   &__box {
     display: flex;
 
-		@media screen and (max-width: 450px) {
-			flex-direction: column;
-		}
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+    }
   }
 
   &__name {
@@ -255,11 +270,11 @@
     line-height: normal;
     margin-bottom: 28px;
 
-		@media screen and (max-width: 450px) {
-			position: absolute;
-			top: 40px;
-			left: 15px;
-		}
+    @media screen and (max-width: 450px) {
+      position: absolute;
+      top: 40px;
+      left: 15px;
+    }
   }
 
   &__ingredients-box {
@@ -267,7 +282,6 @@
     flex-direction: column;
     margin-left: 32px;
     padding-top: 40px;
-
   }
 
   &__title {
@@ -330,9 +344,9 @@
     padding-left: 28px;
     margin-bottom: 24px;
 
-		@media screen and (max-width: 450px) {
-			margin-top: 97px;
-		}
+    @media screen and (max-width: 450px) {
+      margin-top: 97px;
+    }
   }
 
   &__instractions-text {
@@ -370,12 +384,12 @@
     bottom: 10px;
     right: 15px;
 
-		@media screen and (max-width: 450px) {
-			margin-left: auto;
-			margin-right: auto;
-			position: static;
-			margin-top: 32px;
-		}
+    @media screen and (max-width: 450px) {
+      margin-left: auto;
+      margin-right: auto;
+      position: static;
+      margin-top: 32px;
+    }
   }
 
   &__close {
