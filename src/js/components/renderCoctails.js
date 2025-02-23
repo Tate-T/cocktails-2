@@ -4,7 +4,7 @@ export const CocktailComponents = {
   createCocktailItem(cocktail) {
     const isFavorite = Favorites.isFavorite(cocktail.idDrink);
     return `
-      <li class="cocktails__item" data-id="${cocktail.idDrink}">
+      <li class="cocktails__item" data-aos="fade-up" data-aos-duration="1000" data-id="${cocktail.idDrink}">
         <img src="${cocktail.strDrinkThumb}" 
              alt="${cocktail.strDrink}" 
              class="cocktails__image">

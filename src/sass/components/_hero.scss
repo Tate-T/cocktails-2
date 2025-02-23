@@ -97,7 +97,7 @@
     background-color: transparent;
 
     transition-property: color;
-    transition-duration: 500ms;
+    transition: 500ms;
 
     @media screen and (max-width: 770px) {
       width: 24px;
@@ -108,6 +108,7 @@
 
   &__button:hover {
     color: #fd5103;
+    transform: scale(1.2);
   }
   &__img {
     width: auto;
