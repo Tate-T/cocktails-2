@@ -2,9 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 
-img { 
-	width: 100%;
-	height: 100%;
+img {
+  width: 100%;
+  height: 100%;
 }
 
 .container {
@@ -14,17 +14,37 @@ img {
   margin-left: auto;
   margin-right: auto;
 
-	@media screen and (max-width: 770px) {
-		max-width: 770px;
-		padding: 0;
-	}
+  @media screen and (max-width: 770px) {
+    max-width: 770px;
+    padding: 0;
+  }
 
-	@media screen and (max-width: 360px) {
-		max-width: 320px;
-		padding: 0;
-	}
+  @media screen and (max-width: 360px) {
+    max-width: 320px;
+    padding: 0;
+  }
 }
 
 body {
-	transition: 0.4s;
-  }
+  transition: 0.4s;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 0.125rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.125rem;
+  background-color: rgba(255, 130, 0, 0.8);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0.125rem;
+  background-color: var(--white);
+}
+
+::selection {
+  background: rgba(214, 111, 0, 0.8); 
+  color: #fff; 
+}
