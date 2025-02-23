@@ -58,9 +58,11 @@ export const CocktailComponents = {
                   `
                     )
                     .join("")}
-										            <button type="button" class="cocktails-modal__favorite-button">
-              Add to favorite
-            </button>
+							          <button type="button" 
+                  class="cocktails-modal__favorite-button js-favorite ${isFavorite ? 'is-active' : ''}"
+                  data-id="${cocktail.idDrink}">
+            <span class="button-text">${isFavorite ? "Remove fav" : "Add to favorite"}</span>
+          </button>
                 </ul>
               </div>
             </div>
@@ -69,11 +71,6 @@ export const CocktailComponents = {
           <p class="cocktails-modal__instractions-text">
             ${cocktail.strInstructions}
           </p>
-          <button type="button" 
-                  class="cocktails-modal__favorite-button js-favorite ${isFavorite ? 'is-active' : ''}"
-                  data-id="${cocktail.idDrink}">
-            <span class="button-text">${isFavorite ? "Remove fav" : "Add to favorite"}</span>
-          </button>
           <button type="button" class="cocktails-modal__close js-modal-close">
             <svg class="cocktails-modal__close-icon">
               <use href="./images/symbol-defs.svg#icon-cross-close"></use>
