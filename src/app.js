@@ -16,6 +16,17 @@ async function searchHeader() {
       handleError(cocktailsList);
     }
   });
+
+  const mobMenu = document.querySelector(".hero__mob-box");
+
+  mobMenu.addEventListener("click", async (e) => {
+    try {
+			const data = await CocktailAPI.fetchCocktailsByName(e.srcElement.textContent);
+      CocktailComponents.renderCocktailsList(cocktailsList, data);
+		} catch (error) {
+			handleError(cocktailsList);
+		}
+  });
 }
 
 searchHeader();

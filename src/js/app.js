@@ -17,6 +17,19 @@ async function searchHeader() {
       handleError(cocktailsList);
     }
   });
+
+  const mobMenu = document.querySelector(".hero__mob-box");
+
+  mobMenu.addEventListener("click", async (e) => {
+    try {
+      const data = await CocktailAPI.fetchCocktailsByName(
+        e.srcElement.textContent
+      );
+      CocktailComponents.renderCocktailsList(cocktailsList, data);
+    } catch (error) {
+      handleError(cocktailsList);
+    }
+  });
 }
 
 searchHeader();
@@ -51,17 +64,19 @@ async function handleCocktailClick(event) {
   if (learnMoreBtn) {
     const cocktailItem = learnMoreBtn.closest("[data-id]");
     if (!cocktailItem) return;
-    
+
     const cocktailId = cocktailItem.dataset.id;
 
     try {
       const data = await CocktailAPI.fetchCocktailById(cocktailId);
       if (!data?.drinks?.[0]) throw new Error("No cocktail data");
-      
+
       const modalHtml = CocktailComponents.renderModal(data.drinks[0]);
-      
-      document.querySelectorAll(".cocktails-modal__backdrop").forEach(m => m.remove());
-      
+
+      document
+        .querySelectorAll(".cocktails-modal__backdrop")
+        .forEach((m) => m.remove());
+
       document.body.insertAdjacentHTML("beforeend", modalHtml);
       setupModal(cocktailId);
     } catch (error) {
@@ -72,7 +87,7 @@ async function handleCocktailClick(event) {
   if (favoriteBtn) {
     const cocktailItem = favoriteBtn.closest("[data-id]");
     if (!cocktailItem) return;
-    
+
     const cocktailId = cocktailItem.dataset.id;
     toggleFavorite(cocktailId, favoriteBtn);
   }
@@ -89,8 +104,13 @@ function setupModal(cocktailId) {
     setTimeout(() => backdrop.remove(), 300);
   };
 
-  backdrop.querySelector(".js-modal-close")?.addEventListener("click", closeModal);
-  backdrop.addEventListener("click", (e) => e.target === backdrop && closeModal());
+  backdrop
+    .querySelector(".js-modal-close")
+    ?.addEventListener("click", closeModal);
+  backdrop.addEventListener(
+    "click",
+    (e) => e.target === backdrop && closeModal()
+  );
 
   const modalFavoriteBtn = backdrop.querySelector(".js-favorite");
   if (modalFavoriteBtn) {
@@ -123,10 +143,15 @@ function toggleFavorite(id, button) {
 }
 
 function updateButtonUI(button, isActive) {
-  const textElement = button.querySelector(".cocktails__favorite-title") || button;
+  const textElement =
+    button.querySelector(".cocktails__favorite-title") || button;
   const isModal = button.classList.contains("cocktails-modal__favorite-button");
 
   textElement.textContent = isActive
-    ? (isModal ? "Remove fav" : "Remove")
-    : (isModal ? "Add to favorite" : "Add to");
+    ? isModal
+      ? "Remove fav"
+      : "Remove"
+    : isModal
+    ? "Add to favorite"
+    : "Add to";
 }
