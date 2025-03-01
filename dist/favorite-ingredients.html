@@ -10,25 +10,37 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
     
-    <script type="module" crossorigin src="/cocktails-2/assets/hero-ffd518d8.js"></script>
-    <script type="module" crossorigin src="/cocktails-2/assets/index-66f71c48.js"></script>
-    <script type="module" crossorigin src="/cocktails-2/assets/favorites-app-f56a7828.js"></script>
-    <link rel="stylesheet" href="/cocktails-2/assets/hero-c5498a47.css">
+    <script type="module" crossorigin src="/cocktails-2/assets/index-6bfdcafe.js"></script>
+    <script type="module" crossorigin src="/cocktails-2/assets/favorites-app-fafb7063.js"></script>
+    <link rel="stylesheet" href="/cocktails-2/assets/index-3badd8ae.css">
   </head>
   <body>
     <header class="header">
     <div class="container">
         <div class="header__box">
-            <a href="./index.html" class="header__logo-link">
+            <a href="./index.html" class="header__logo-link" data-aos="fade-down"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="500">
                 <img src="/cocktails-2/assets/logo-83f11de2.png" alt="" class="header__logo">
             </a>
             <div class="header__container">
                 <ul class="header__nav">
-                    <li class="header__nav-item">
+                    <li class="header__nav-item" data-aos="fade-down"
+                    data-aos-easing="ease-in-sine"
+                    data-aos-duration="700">
                         <a href="./index.html" class="header__link">Home</a>
                     </li>
-                    <li class="header__nav-item">
+                    <li class="header__nav-item" data-aos="fade-down"
+                    data-aos-easing="ease-in-sine"
+                    data-aos-duration="900">
                         <button class="header__menu-btn">Favorite</button>
                         <ul class="header__menu-list hidden-menu-list">
                             <li class="header__menu-item">
@@ -41,15 +53,19 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="header__search">
+                <div class="header__search" data-aos="fade-down"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1100">
                     <button class="header__btn">
                         <svg class="header__search-svg">
-                            <use href="../images/symbol-defs.svg#icon-search"></use>
+                            <use href="/cocktails-2/assets/symbol-defs-1fa6411f.svg#icon-search"></use>
                         </svg>
                     </button>
                     <input type="text" class="header__input" id="header__input" placeholder="Search  |">
                 </div>
-                <div class="header__switch-theme">
+                <div class="header__switch-theme" data-aos="fade-down"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1300">
                     <p class="header__light-text">Light</p>
                     <label class="header__theme-btn">
                         <input type="checkbox" class="theme-checkbox">
