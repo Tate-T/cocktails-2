@@ -133,7 +133,7 @@ export const CocktailComponents = {
                   : ""
               }
               <button type="button" 
-                class="cocktails-modal__favorite-button js-favorite ${
+                class="cocktails-modal__favorite-button js-ingredient-favorite ${
                   isIngredientFavorite ? "is-active" : ""
                 }"
                 data-ingredient="${ingredient.strIngredient}">
