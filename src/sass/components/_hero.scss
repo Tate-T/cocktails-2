@@ -67,6 +67,13 @@
   }
   &__box {
     position: relative;
+    padding-top: 38px;
+    @media screen and (max-width: 770px) {
+      padding-top: 48px;
+    }
+    @media screen and (max-width: 360px) {
+      padding-top: 0;
+    }
   }
   &__list {
     display: flex;
@@ -173,8 +180,8 @@
   &__mob-box {
     display: flex;
     position: absolute;
-    top: 702px;
-    left: 136px;
+    top: 642px;
+    left: 142px;
     flex-direction: column;
     width: 93px;
     height: 84px;

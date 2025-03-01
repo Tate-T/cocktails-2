@@ -75,32 +75,6 @@ themeBtn.forEach(button =>{
         }
     });
 })
-// themeBtn.addEventListener("click", () => {
-//     console.log('z')
-//     if (localStorage.getItem('theme') === null || JSON.parse(localStorage.getItem('theme')).themeColor === 'white') {
-//         document.documentElement.style.setProperty('--black', '#FCFCFC');
-//         document.documentElement.style.setProperty('--white', '#212121');
-//         body.style.backgroundColor = '#202025';
-
-//         let jsonValuesTheme = {
-//             themeColor: "black",
-//             inputValue: themeBtn.checked
-//         }
-//         localStorage.setItem('theme', JSON.stringify(jsonValuesTheme))
-//     } else if (JSON.parse(localStorage.getItem('theme')).themeColor === 'black') {
-//         document.documentElement.style.setProperty('--black', '#212121');
-//         document.documentElement.style.setProperty('--white', '#FCFCFC');
-//         body.style.backgroundColor = '';
-
-//         let jsonValuesTheme = {
-//             themeColor: "white",
-//             inputValue: themeBtn.checked
-//         }
-
-//         localStorage.setItem('theme', JSON.stringify(jsonValuesTheme))
-//     }
-// });
-
 
 menuBtn.addEventListener('click', () => {
     if (menuList.classList.value.includes('hidden-menu-list')) {
