@@ -105,7 +105,7 @@ function handleError(container, error) {
   container.innerHTML = `
     <li class="error-item">
       <p class="error-message">Sorry, we didn't find any cocktail for you</p>
-      <img class="error-image" src="/cocktails-2/assets/failed.png" alt="failed to load cocktails">
+      <img class="error-image" src="/cocktails-2/assets/failed-cfd0f865.png" alt="failed to load cocktails">
     </li>
   `;
 }
