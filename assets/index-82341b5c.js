@@ -112,7 +112,7 @@
             Learn more
           </button>
           <button type="button" 
-                  class="cocktails__favorite js-ingredient-favorite ${t?"is-active":""}"
+                  class="cocktails__favorite js-favorite ${t?"is-active":""}"
                   data-ingredient="${e.strIngredient}">
             <span class="cocktails__favorite-title">${t?"Remove":"Add to"}</span>
             <svg class="cocktails__favorite-icon">
