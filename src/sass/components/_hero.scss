@@ -38,12 +38,13 @@
     @media screen and (max-width: 770px) {
       font-size: 26px;
       line-height: 1.6;
-      width: 336px;
+      max-width: 336px;
     }
 
     @media screen and (max-width: 360px) {
       font-size: 22px;
       line-height: 1.9;
+			max-width: 320px;
     }
   }
   &__text {
