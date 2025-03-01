@@ -14,20 +14,31 @@ async function searchHeader() {
   const search = document.querySelector(".header__btn");
   const searchInput = document.querySelector(".header__input");
   const cocktailsList = document.querySelector(".cocktails__list");
+  const headerMenuBtn = document.querySelector(".header-menu__btn");
+  const headerMenuInput = document.querySelector(".header-menu__input");
+  const headerMenu = document.querySelector(".header-menu");
 
-  if (search && searchInput && cocktailsList) {
-    search.addEventListener("click", async () => {
-      try {
-        const value = searchInput.value.trim();
-        if (!value) return;
+  search.addEventListener("click", async () => {
+    try {
+      const value = searchInput.value.trim();
 
-        const data = await CocktailAPI.fetchCocktailsByName(value);
-        CocktailComponents.renderCocktailsList(cocktailsList, data);
-      } catch (error) {
-        handleError(cocktailsList, error);
-      }
-    });
-  }
+      const data = await CocktailAPI.fetchCocktailsByName(value);
+      CocktailComponents.renderCocktailsList(cocktailsList, data);
+    } catch (error) {
+      handleError(cocktailsList, error);
+    }
+  });
+  headerMenuBtn.addEventListener("click", async (e) => {
+    try {
+      const value = headerMenuInput.value.trim();
+
+      const data = await CocktailAPI.fetchCocktailsByName(value);
+      CocktailComponents.renderCocktailsList(cocktailsList, data);
+      headerMenu.classList.add("hidden-burger-menu");
+    } catch (error) {
+      handleError(cocktailsList, error);
+    }
+  });
 
   const mobMenu = document.querySelector(".hero__mob-box");
   const letter = document.querySelector(".hero__letter");
