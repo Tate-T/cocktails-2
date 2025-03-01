@@ -22,7 +22,7 @@ export const CocktailComponents = {
               isFavorite ? "Remove" : "Add to"
             }</span>
             <svg class="cocktails__favorite-icon">
-              <use href="./images/symbol-defs.svg#icon-heart"></use>
+              <use href="/cocktails-2/assets/symbol-defs-1fa6411f.svg#icon-heart"></use>
             </svg>
           </button>
         </div>
