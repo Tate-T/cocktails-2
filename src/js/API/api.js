@@ -23,4 +23,11 @@ export const CocktailAPI = {
     );
     return nonAlcoholicDrinks;
   },
+  
+  async fetchIngredientByName(name) {
+    const response = await fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${name}`
+    );
+    return response.json();
+  }
 };

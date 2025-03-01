@@ -48,3 +48,30 @@ body {
   background: rgba(214, 111, 0, 0.8); 
   color: #fff; 
 }
+
+/* Additional styles for the ingredient modal */
+.js-ingredient-link {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #007bff;
+}
+
+.js-ingredient-link:hover {
+  color: #0056b3;
+}
+
+.ingredient-modal-box {
+  align-items: center;
+}
+
+.ingredient-alcohol {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Ensure the image in the ingredient modal has appropriate size */
+.ingredient-modal-box .cocktails-modal__img {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+}
