@@ -75,7 +75,7 @@
               ${e.strType?`<p class="cocktails-modal__subtext">Type: ${e.strType}</p>`:""}
               ${e.strAlcohol==="Yes"?'<p class="cocktails-modal__subtext ingredient-alcohol">Contains alcohol</p>':""}
               <button type="button" 
-                class="cocktails-modal__favorite-button js-ingredient-favorite ${t?"is-active":""}"
+                class="cocktails-modal__favorite-button js-favorite ${t?"is-active":""}"
                 data-ingredient="${e.strIngredient}">
                 <span class="button-text">${t?"Remove fav":"Add to fav"}</span>
               </button>
