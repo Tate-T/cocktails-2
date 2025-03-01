@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".cocktails__list")) {
     initApp();
     searchHeader();
+    enhanceEventHandling();
   }
 });
 
@@ -62,6 +63,23 @@ async function initApp() {
 
   cocktailsList.addEventListener("click", handleCocktailClick);
   document.body.addEventListener("click", handleIngredientClick);
+}
+
+function enhanceEventHandling() {
+  document.addEventListener('click', function(event) {
+    const ingredientFavoriteBtn = event.target.closest('.js-ingredient-favorite');
+    
+    if (ingredientFavoriteBtn) {
+      const ingredientName = ingredientFavoriteBtn.dataset.ingredient;
+      if (ingredientName) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        console.log("Toggling favorite for ingredient:", ingredientName);
+        toggleFavoriteIngredient(ingredientName, ingredientFavoriteBtn);
+      }
+    }
+  });
 }
 
 function handleError(container, error) {
@@ -243,6 +261,8 @@ function toggleFavorite(id, button) {
 function toggleFavoriteIngredient(ingredientName, button) {
   if (!ingredientName) return;
 
+  console.log("Processing favorite toggle for:", ingredientName);
+  
   const isFavorite = Favorites.isIngredientFavorite(ingredientName);
   const newState = !isFavorite;
 
@@ -263,7 +283,20 @@ function toggleFavoriteIngredient(ingredientName, button) {
       btn.classList.toggle("is-active", newState);
       updateIngredientButtonUI(btn, newState);
     }
+
+    if (newState) {
+      console.log("Adding to favorites:", ingredientName);
+      Favorites.addFavoriteIngredient(ingredientName);
+    } else {
+      console.log("Removing from favorites:", ingredientName);
+      Favorites.removeFavoriteIngredient(ingredientName);
+    }
   });
+
+  if (!ingredientName) {
+    console.error("No ingredient name provided");
+    return;
+  }
 }
 
 function updateButtonUI(button, isActive) {
