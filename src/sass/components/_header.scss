@@ -29,7 +29,7 @@
     }
   }
   &__logo {
-    min-width: 156px;
+    // min-width: 156px;
     height: 43px;
   }
   &__nav {
@@ -54,7 +54,6 @@
     border-radius: 4px;
     border: 1px solid var(--grapefruit);
     background-color: var(--white);
-    z-index: 12;
   }
   &__menu-option {
     color: var(--black);
