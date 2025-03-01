@@ -80,15 +80,17 @@ async function initApp() {
 }
 
 function enhanceEventHandling() {
-  document.addEventListener('click', function(event) {
-    const ingredientFavoriteBtn = event.target.closest('.js-ingredient-favorite');
-    
+  document.addEventListener("click", function (event) {
+    const ingredientFavoriteBtn = event.target.closest(
+      ".js-ingredient-favorite"
+    );
+
     if (ingredientFavoriteBtn) {
       const ingredientName = ingredientFavoriteBtn.dataset.ingredient;
       if (ingredientName) {
         event.preventDefault();
         event.stopPropagation();
-        
+
         console.log("Toggling favorite for ingredient:", ingredientName);
         toggleFavoriteIngredient(ingredientName, ingredientFavoriteBtn);
       }
@@ -103,7 +105,7 @@ function handleError(container, error) {
   container.innerHTML = `
     <li class="error-item">
       <p class="error-message">Sorry, we didn't find any cocktail for you</p>
-      <img class="error-image" src="./images/failed.png" alt="failed to load cocktails">
+      <img class="error-image" src="/cocktails-2/assets/failed.png" alt="failed to load cocktails">
     </li>
   `;
 }
@@ -276,7 +278,7 @@ function toggleFavoriteIngredient(ingredientName, button) {
   if (!ingredientName) return;
 
   console.log("Processing favorite toggle for:", ingredientName);
-  
+
   const isFavorite = Favorites.isIngredientFavorite(ingredientName);
   const newState = !isFavorite;
 

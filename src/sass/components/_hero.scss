@@ -131,7 +131,7 @@
   }
   &__text-mob {
     display: none;
-    color: #000;
+    color: var(--black);
     font-family: Poppins;
     font-size: 14px;
     font-weight: 500;
@@ -184,7 +184,7 @@
     display: flex;
     position: absolute;
     top: 54px;
-    left: 122px;
+    left: 114px;
     flex-direction: column;
     width: 93px;
     height: 84px;
