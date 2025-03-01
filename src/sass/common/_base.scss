@@ -7,6 +7,10 @@ img {
   height: 100%;
 }
 
+.is-hidden { 
+	display: none;
+}
+
 .container {
   max-width: 1280px;
   padding-left: 15px;
@@ -49,7 +53,6 @@ body {
   color: #fff; 
 }
 
-/* Additional styles for the ingredient modal */
 .js-ingredient-link {
   cursor: pointer;
   text-decoration: underline;
@@ -69,7 +72,6 @@ body {
   font-weight: bold;
 }
 
-/* Ensure the image in the ingredient modal has appropriate size */
 .ingredient-modal-box .cocktails-modal__img {
   max-width: 150px;
   max-height: 150px;

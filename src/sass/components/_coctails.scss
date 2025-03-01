@@ -47,13 +47,14 @@
     transition: 500ms;
 
     @media screen and (max-width: 770px) {
+			min-height: 550px;
       max-width: 335px;
-      max-height: 541px;
+      max-height: 560px;
     }
 
     @media screen and (max-width: 360px) {
       max-width: 280px;
-      max-height: 449px;
+      max-height: 450px;
     }
     &:hover {
       transition: 500ms;
@@ -117,7 +118,7 @@
   }
 
   &__learn-more {
-    color: var(--white);
+    color: white;
     font-family: "Roboto";
     font-size: 20px;
     font-style: normal;
