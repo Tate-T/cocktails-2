@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const list = document.querySelector(".hero__list");
   const input = document.querySelector(".header__input");
+
   const btnOpen = document.querySelector('.hero__open-letters svg');
   const mobBoxBtn = document.querySelector('.hero__mob-box');
 

@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".cocktails__list")) {
     initApp();
     searchHeader();
+    enhanceEventHandling();
   }
 });
 
@@ -13,27 +14,41 @@ async function searchHeader() {
   const search = document.querySelector(".header__btn");
   const searchInput = document.querySelector(".header__input");
   const cocktailsList = document.querySelector(".cocktails__list");
+  const headerMenuBtn = document.querySelector(".header-menu__btn");
+  const headerMenuInput = document.querySelector(".header-menu__input");
+  const headerMenu = document.querySelector(".header-menu");
 
-  if (search && searchInput && cocktailsList) {
-    search.addEventListener("click", async () => {
-      try {
-        const value = searchInput.value.trim();
-        if (!value) return;
+  search.addEventListener("click", async () => {
+    try {
+      const value = searchInput.value.trim();
 
-        const data = await CocktailAPI.fetchCocktailsByName(value);
-        CocktailComponents.renderCocktailsList(cocktailsList, data);
-      } catch (error) {
-        handleError(cocktailsList, error);
-      }
-    });
-  }
+      const data = await CocktailAPI.fetchCocktailsByName(value);
+      CocktailComponents.renderCocktailsList(cocktailsList, data);
+    } catch (error) {
+      handleError(cocktailsList, error);
+    }
+  });
+  headerMenuBtn.addEventListener("click", async (e) => {
+    try {
+      const value = headerMenuInput.value.trim();
+
+      const data = await CocktailAPI.fetchCocktailsByName(value);
+      CocktailComponents.renderCocktailsList(cocktailsList, data);
+      headerMenu.classList.add("hidden-burger-menu");
+    } catch (error) {
+      handleError(cocktailsList, error);
+    }
+  });
 
   const mobMenu = document.querySelector(".hero__mob-box");
+  const letter = document.querySelector(".hero__letter");
   if (mobMenu && cocktailsList) {
     mobMenu.addEventListener("click", async (e) => {
       if (!e.target.textContent.trim()) return;
 
       try {
+        letter.textContent = e.target.textContent.trim();
+        mobMenu.classList.add("mob-box-hidden");
         const data = await CocktailAPI.fetchCocktailsByName(
           e.target.textContent.trim()
         );
@@ -62,6 +77,23 @@ async function initApp() {
 
   cocktailsList.addEventListener("click", handleCocktailClick);
   document.body.addEventListener("click", handleIngredientClick);
+}
+
+function enhanceEventHandling() {
+  document.addEventListener('click', function(event) {
+    const ingredientFavoriteBtn = event.target.closest('.js-ingredient-favorite');
+    
+    if (ingredientFavoriteBtn) {
+      const ingredientName = ingredientFavoriteBtn.dataset.ingredient;
+      if (ingredientName) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        console.log("Toggling favorite for ingredient:", ingredientName);
+        toggleFavoriteIngredient(ingredientName, ingredientFavoriteBtn);
+      }
+    }
+  });
 }
 
 function handleError(container, error) {
@@ -243,6 +275,8 @@ function toggleFavorite(id, button) {
 function toggleFavoriteIngredient(ingredientName, button) {
   if (!ingredientName) return;
 
+  console.log("Processing favorite toggle for:", ingredientName);
+  
   const isFavorite = Favorites.isIngredientFavorite(ingredientName);
   const newState = !isFavorite;
 
@@ -263,7 +297,20 @@ function toggleFavoriteIngredient(ingredientName, button) {
       btn.classList.toggle("is-active", newState);
       updateIngredientButtonUI(btn, newState);
     }
+
+    if (newState) {
+      console.log("Adding to favorites:", ingredientName);
+      Favorites.addFavoriteIngredient(ingredientName);
+    } else {
+      console.log("Removing from favorites:", ingredientName);
+      Favorites.removeFavoriteIngredient(ingredientName);
+    }
   });
+
+  if (!ingredientName) {
+    console.error("No ingredient name provided");
+    return;
+  }
 }
 
 function updateButtonUI(button, isActive) {
