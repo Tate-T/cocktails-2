@@ -29,7 +29,7 @@
     }
   }
   &__logo {
-    min-width: 156px;
+    // min-width: 156px;
     height: 43px;
   }
   &__nav {
@@ -132,6 +132,7 @@
     border-radius: 4px;
     border: 1px solid var(--grapefruit);
     background-color: transparent;
+		color: var(--black);
 
     &::placeholder {
       color: var(--Gray, #5f6775);
@@ -227,6 +228,7 @@
   &__mobile-menu-svg {
     width: 30px;
     height: 16px;
+    fill: var(--black);
   }
 }
 

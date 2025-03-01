@@ -30,11 +30,14 @@ async function searchHeader() {
   }
 
   const mobMenu = document.querySelector(".hero__mob-box");
+  const letter = document.querySelector(".hero__letter");
   if (mobMenu && cocktailsList) {
     mobMenu.addEventListener("click", async (e) => {
       if (!e.target.textContent.trim()) return;
 
       try {
+        letter.textContent = e.target.textContent.trim();
+        mobMenu.classList.add("mob-box-hidden");
         const data = await CocktailAPI.fetchCocktailsByName(
           e.target.textContent.trim()
         );

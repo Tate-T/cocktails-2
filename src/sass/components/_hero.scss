@@ -1,5 +1,5 @@
 .hero {
-  padding-top: 59px;
+  padding-top: 97px;
   padding-bottom: 105px;
 
   @media screen and (max-width: 770px) {
@@ -38,12 +38,13 @@
     @media screen and (max-width: 770px) {
       font-size: 26px;
       line-height: 1.6;
-      width: 336px;
+      max-width: 336px;
     }
 
     @media screen and (max-width: 360px) {
       font-size: 22px;
       line-height: 1.9;
+			max-width: 320px;
     }
   }
   &__text {
@@ -67,6 +68,13 @@
   }
   &__box {
     position: relative;
+    padding-top: 38px;
+    @media screen and (max-width: 770px) {
+      padding-top: 48px;
+    }
+    @media screen and (max-width: 360px) {
+      padding-top: 0;
+    }
   }
   &__list {
     display: flex;
@@ -173,8 +181,8 @@
   &__mob-box {
     display: flex;
     position: absolute;
-    top: 702px;
-    left: 136px;
+    top: 642px;
+    left: 142px;
     flex-direction: column;
     width: 93px;
     height: 84px;
