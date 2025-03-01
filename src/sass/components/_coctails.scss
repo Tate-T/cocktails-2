@@ -2,6 +2,10 @@
   display: flex;
   padding-bottom: 60px;
 
+  @media screen and (max-width: 360px) {
+    padding-top: 40px;
+  }
+
   &__title {
     color: var(--black);
     text-align: center;
