@@ -52,6 +52,9 @@ async function searchHeader() {
         const data = await CocktailAPI.fetchCocktailsByName(
           e.target.textContent.trim()
         );
+        if (data.length === 0) {
+          handleError(cocktailsList, "error");
+        }
         CocktailComponents.renderCocktailsList(cocktailsList, data);
       } catch (error) {
         handleError(cocktailsList, error);
