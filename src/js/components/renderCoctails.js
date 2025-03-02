@@ -65,13 +65,6 @@ export const CocktailComponents = {
                               } <span class="js-ingredient-link" data-ingredient="${
                         item.ingredient
                       }">${item.ingredient}</span>
-                              <button type="button" class="ingredient-favorite-btn js-ingredient-favorite ${
-                                isIngredientFavorite ? "is-active" : ""
-                              }" data-ingredient="${item.ingredient}">
-                                <svg class="ingredient-favorite-icon" width="16" height="16">
-                                  <use href="./images/symbol-defs.svg#icon-heart"></use>
-                                </svg>
-                              </button>
                             </p>
                           </li>
                         `;
