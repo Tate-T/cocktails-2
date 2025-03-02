@@ -29,7 +29,7 @@
     }
   }
   &__logo {
-    // min-width: 156px;
+    min-width: 156px;
     height: 43px;
   }
   &__nav {
@@ -103,7 +103,7 @@
     display: flex;
     position: relative;
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 460px) {
       display: none;
     }
     @media screen and (max-width: 770px) {
