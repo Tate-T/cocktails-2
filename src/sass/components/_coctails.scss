@@ -47,13 +47,13 @@
     transition: 500ms;
 
     @media screen and (max-width: 770px) {
-			min-height: 550px;
+      min-height: 550px;
       max-width: 335px;
       max-height: 560px;
     }
 
     @media screen and (max-width: 360px) {
-			min-height: 450px;
+      min-height: 450px;
       max-width: 280px;
       max-height: 450px;
     }
@@ -256,7 +256,7 @@
     @media screen and (max-width: 770px) {
       max-width: 288px;
       max-height: 320px;
-			margin-left: 20px;
+      margin-left: 20px;
     }
   }
 
@@ -415,4 +415,19 @@
     height: 32px;
     fill: var(--black);
   }
+}
+
+.js-ingredient-link {
+  color: var(--grey);
+  text-decoration: none;
+  font-style: italic;
+  transition: .5s ease-in-out color;
+  font-weight: 500;
+}
+
+
+.js-ingredient-link:hover {
+  color: var(--grapefruit);
+  text-decoration: none;
+  font-style: bold;
 }
