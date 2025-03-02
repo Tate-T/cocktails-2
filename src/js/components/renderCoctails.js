@@ -65,6 +65,13 @@ export const CocktailComponents = {
                               } <span class="js-ingredient-link" data-ingredient="${
                         item.ingredient
                       }">${item.ingredient}</span>
+                              <button type="button" class="ingredient-favorite-btn js-ingredient-favorite ${
+                                isIngredientFavorite ? "is-active" : ""
+                              }" data-ingredient="${item.ingredient}">
+                                <svg class="ingredient-favorite-icon" width="16" height="16">
+                                  <use href="/cocktails-2/assets/symbol-defs-1fa6411f.svg#icon-heart"></use>
+                                </svg>
+                              </button>
                             </p>
                           </li>
                         `;
@@ -89,7 +96,7 @@ export const CocktailComponents = {
               </p>
               <button type="button" class="cocktails-modal__close js-modal-close">
                 <svg class="cocktails-modal__close-icon">
-                  <use href="./images/symbol-defs.svg#icon-cross-close"></use>
+                  <use href="/cocktails-2/assets/symbol-defs-1fa6411f.svg#icon-cross-close"></use>
                 </svg>
               </button>
             </div>
