@@ -7,6 +7,20 @@ img {
   height: 100%;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: 0.4s;
+}
+.main-content {
+  flex: 1 0 auto;
 .is-hidden { 
 	display: none;
 }
