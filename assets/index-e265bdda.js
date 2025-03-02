@@ -88,7 +88,7 @@
             </p>
             <button type="button" class="cocktails-modal__close js-ingredient-modal-close">
               <svg class="cocktails-modal__close-icon">
-                <use href="./images/symbol-defs.svg#icon-cross-close"></use>
+                <use href="/cocktails-2/assets/symbol-defs-1fa6411f.svg#icon-cross-close"></use>
               </svg>
             </button>
           </div>
@@ -116,7 +116,7 @@
                   data-ingredient="${e.strIngredient}">
             <span class="cocktails__favorite-title">${t?"Remove":"Add to"}</span>
             <svg class="cocktails__favorite-icon">
-              <use href="./images/symbol-defs.svg#icon-heart"></use>
+              <use href="/cocktails-2/assets/symbol-defs-1fa6411f.svg#icon-heart"></use>
             </svg>
           </button>
         </div>
