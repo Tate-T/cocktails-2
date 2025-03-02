@@ -1,0 +1,14 @@
+.scroll { 
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+
+	&__img { 
+		max-width: 60px;
+		max-height: 60px;
+	}
+}
+
+.top { 
+	opacity: 0;
+}

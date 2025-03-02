@@ -21,6 +21,8 @@ body {
 }
 .main-content {
   flex: 1 0 auto;
+.is-hidden { 
+	display: none;
 }
 
 .container {
@@ -43,4 +45,49 @@ body {
 
 body {
   transition: 0.4s;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 0.125rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.125rem;
+  background-color: rgba(255, 130, 0, 0.8);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0.125rem;
+  background-color: var(--white);
+}
+
+::selection {
+  background: rgba(214, 111, 0, 0.8); 
+  color: #fff; 
+}
+
+.js-ingredient-link {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #007bff;
+}
+
+.js-ingredient-link:hover {
+  color: #0056b3;
+}
+
+.ingredient-modal-box {
+  align-items: center;
+}
+
+.ingredient-alcohol {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.ingredient-modal-box .cocktails-modal__img {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
 }
