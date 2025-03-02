@@ -17,9 +17,11 @@
     padding-top: 20px;
     width: 100%;
     align-items: center;
-    justify-content: end;
     @media screen and (max-width: 360px) {
       width: auto;
+    }
+    @media screen and (max-width: 770px) {
+      justify-content: end;
     }
   }
   &__logo-link {
